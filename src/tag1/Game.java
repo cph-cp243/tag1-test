@@ -2,11 +2,21 @@ package tag1;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Random;
 import textio.SysTextIO;
 import textio.*;
 
-public class Game 
-{
+public class Game {
+
+    Monster monster;
+
+    Random mrx = new Random();
+    int Low = 0;
+    int High = 14;
+    int Result = mrx.nextInt(High - Low) + Low;
+    
+
+
         Player player;
         Room rx = null; // Current room
         TextIO io = new TextIO(new SysTextIO());
@@ -19,8 +29,8 @@ public class Game
         public static final String SEARCH = "Search Room";
         public static final String INVENTORY = "Inventory";
         public static final String HIGHSCORE = "High Score";
-        public static final String QUIT = "Quit Game";
-        
+        public static final String QUIT = "Quit Game";        
+    private Object mrooms;
         
         
     public Game() throws IOException, ClassNotFoundException 
@@ -131,6 +141,7 @@ public class Game
     {
         // Room 0
         rooms.get(0).setNorth(rooms.get(1));
+        rooms.get(1); equals mrooms.get();
         // Room 1
         rooms.get(1).setSouth(rooms.get(0));
         rooms.get(1).setEast(rooms.get(2));
